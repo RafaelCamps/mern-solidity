@@ -1,0 +1,22 @@
+{
+  "name": "mern-solidity",
+  "version": "1.0.0",
+  "description": "MERN connected to Blockchain Boilerplate",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelCamps/mern-solidity.git"
+  },
+  "author": "Rafael Camps",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RafaelCamps/mern-solidity/issues"
+  },
+  "homepage": "https://github.com/RafaelCamps/mern-solidity#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
