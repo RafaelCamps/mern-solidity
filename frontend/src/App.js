@@ -9,33 +9,55 @@ const App = () => {
 
   //UseEffect con fetch() con promises
   // useEffect(() => {
-  //   fetch('http://localhost:5000/api/points')
-  //     .then(res => res.json())
-  //     .then(data => setPoints(data));
+
+  //   const fetchData = async () => {
+  //     //fetch('http://localhost:5000/api/points')
+  //     await fetch('/api/points')
+  //       .then(res => res.json())
+  //       .then(data => setPoints(data));
+  //     console.log(points);
+  //   };
+  //   fetchData();
+  //   console.log(
+  //     'points: ', points
+  //   );
+
   // }, []);
 
   //UseEffect con fetch() con async/await   const { data } = await fetch('http://localhost:5000/api/points');
-  useEffect(() => {
-    const fetchPoints = async () => {
-      const { data } = await fetch('/api/points');
-      setPoints(data);
-    };
-
-    fetchPoints();
-
-  }, []);
-  
   // useEffect(() => {
   //   const fetchPoints = async () => {
-  //     const { data } = await axios.get('/api/points');
+  //     const { data } = await fetch('/api/points');
+  //     console.log('data',data);
   //     setPoints(data);
   //   };
+
   //   fetchPoints();
+
+  //   console.log({ points });
   // }, []);
+  
+  useEffect(() => {
+    const fetchPoints = async () => {
+      const { data } = await axios.get('/api/points');
+      console.log('data',data);
+      setPoints(data);
+    };
+    fetchPoints();
+    console.log({ points });
+  }, []);
 
   return (
     <>
       <h1>Test Blockchain</h1>
+      {points.map(p => (  
+        <div key={p.player}>
+          <p>Player: {p.player}</p>
+          <p>Points: {p.points}</p>
+          {/* <p>Result: {p.result}</p> */}
+        </div>
+      ))}
+        
     </>
   );
 }

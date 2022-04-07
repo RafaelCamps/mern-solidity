@@ -2,6 +2,7 @@
   "name": "mern-solidity",
   "version": "1.0.0",
   "description": "MERN connected to Blockchain Boilerplate",
+  "type": "module", 
   "main": "server.js",
   "scripts": {
     "start": "node backend/server",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/RafaelCamps/mern-solidity#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.3"
   },
   "devDependencies": {

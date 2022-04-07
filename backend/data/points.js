@@ -1,4 +1,4 @@
-points = [{
+const points = [{
         player: 1,
         points: 20
     }, {
@@ -10,5 +10,5 @@ points = [{
     }];
 
 
-module.exports = points;
-//export default points; //modules
+//module.exports = points; //Exportamos el objeto points sin hacer uso de módulos 
+export default points; //modules

@@ -1,13 +1,24 @@
-const { randomBytes } = require('crypto');
-const express = require('express');
-const points = require('./data/points');
+// Como requerimos los paquetes y archivos sin usar módulos
+// const express = require('express');
+// const dotenv = require('dotenv');
+// const points = require('./data/points');
 
-const app = express();
+//importamos los paquetes que vamos a usar
+import express from 'express';
+import dotenv from 'dotenv';
+import points from './data/points.js';
 
+
+dotenv.config(); //Inicializamos la configuración de las variables de entorno
+const app = express(); //Inicializamos express - creamos un objeto de express
+const PORT = process.env.PORT || 5000; //Obtenemos el puerto de la variable de entorno o 5000
+
+//Creamos una ruta para el endpoint /  
 app.get('/', (req, res) => {
     res.send('API is running!!');
 });
 
+// Creamos una ruta para el endpoint /api/points
 app.get('/api/points', (req, res) => {
     res.json(points);
 });
@@ -29,5 +40,5 @@ app.get('/api/getResult', (req, res) => {
     //res.json(result);
 });
         
-
-app.listen(5000, console.log('Server running on port 5000'));
+//Inicializamos el servidor en el puerto 5000
+app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`));
